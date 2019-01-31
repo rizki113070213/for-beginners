@@ -1,9 +1,10 @@
 import React from "react";
+import "./../styles/style.css";
 
 function Footer() {
   return(
     <footer>
-      <h3>This is my footer element</h3>
+      <p>&copy;2019 3ribulabs</p>
     </footer>
   );
 }
