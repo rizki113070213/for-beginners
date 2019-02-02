@@ -5,8 +5,8 @@ function Joke(props) {
   return(
     <div className="joke">
       {/* {question} */}
-      <p style={{display: !props.question && "none"}}>Question: {props.question}</p>
-      <p style={{color: !props.question && "grey"}}>Answer: {props.punchLine}</p>
+      <p style={{display: !props.joke.question && "none"}}>Question: {props.joke.question}</p>
+      <p style={{color: !props.joke.question && "grey"}}>Answer: {props.joke.punchLine}</p>
       <hr />
     </div>
   );
