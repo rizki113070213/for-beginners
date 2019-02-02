@@ -1,6 +1,10 @@
 import React from "react";
 import "./../styles/style.css";
 
+function handleChange() {
+  console.log('it works!')
+}
+
 function TodoItem(props) {
   let style = {}
 
@@ -11,7 +15,7 @@ function TodoItem(props) {
 
   return(
     <div className="todo-item">
-      <input type="checkbox" checked={props.todo.completed} />
+      <input type="checkbox" checked={props.todo.completed} onChange={handleChange}/>
       <p style={style}>{props.todo.text}</p>
     </div>
   );
