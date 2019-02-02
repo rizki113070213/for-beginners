@@ -1,13 +1,13 @@
 import React from "react";
-import jokesData from "./jokesData"
-import Joke from "./components/Joke";
+import productsData from "./productsData"
+import Product from "./components/Product";
 
 function App() {
-  const JokeComponents = jokesData.map(joke => <Joke key={joke.id} joke={joke}/>)
+  const productComponents = productsData.map(product => <Product key={product.id} product={product}/>)
 
   return(
-    <div className="jokes">
-      {JokeComponents}
+    <div className="products">
+      {productComponents}
     </div>
   );
 }
