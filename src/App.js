@@ -4,19 +4,18 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      name: "M Rizki",
-      age: 32
+      isLoggedIn: false
     }
   }
 
   render() {
+    const wordDisplay = this.state.isLoggedIn ? "in" : "out"
     return(
       <div>
-        <h1>{this.state.name}</h1>
-        <h3>{this.state.age} years old</h3>
+        <h1>You are currently logged {wordDisplay}</h1>
       </div>
     )
   }
 }
 
-export default App;
+export default App
