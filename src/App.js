@@ -1,24 +1,15 @@
 import React from "react";
-import Conditional from "./components/Conditional";
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      isLoading: true
+      unreadMessages: ["a", "b"]
     }
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      })
-    }, 1500)
-  }
-
   render() {
-    return this.state.isLoading ? <h1>Loading...</h1> : <Conditional />
+    return this.state.unreadMessages.length > 0 && <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
   }
 }
 
