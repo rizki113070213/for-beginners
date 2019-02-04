@@ -4,12 +4,27 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      unreadMessages: ["a", "b"]
+      isLoggedIn: false
     }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    this.setState(prevState => {
+      return {
+        isLoggedIn: !prevState.isLoggedIn
+      }
+    })
   }
 
   render() {
-    return this.state.unreadMessages.length > 0 && <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
+    const textDisplay = this.state.isLoggedIn ? "logged in" : "logged out"
+    return(
+      <div>
+        <h2>You currently are {textDisplay}</h2>
+        <button onClick={this.handleClick}>{!this.state.isLoggedIn ? "Login" : "Logout"}</button>
+      </div>
+    )
   }
 }
 
