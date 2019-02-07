@@ -4,28 +4,40 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      loading: false,
-      character: {}
+      firstName: "",
+      lastName: ""
     }
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  componentDidMount() {
-    this.setState({loading: true})
-    fetch("https://swapi.co/api/people/1")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          character: data,
-          loading: false
-        })
-      })
+  handleChange(event) {
+    const {name, value} = event.target
+    this.setState({
+      [name]: value
+    })
   }
 
   render() {
     return(
-      <div>
-        {this.state.loading ? <h1>Loading...</h1> : this.state.character.name}
-      </div>
+      <form>
+        <input
+          type="text"
+          name="firstName"
+          value={this.state.firstName}
+          placeholder="First Name"
+          onChange={this.handleChange}
+        />
+        <br />
+
+        <input
+          type="text"
+          name="lastName"
+          value={this.state.lastName}
+          placeholder="Last Name"
+          onChange={this.handleChange}
+        />
+        <p>{this.state.firstName} {this.state.lastName}</p>
+      </form>
     )
   }
 }
